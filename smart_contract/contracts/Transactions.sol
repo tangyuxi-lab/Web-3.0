@@ -1,4 +1,5 @@
-//SPDX-License-Identifier: UNLICENSED
+// SPDX-License-Identifier: UNLICENSED
+
 pragma solidity ^0.8.0;
 
 contract Transactions {
@@ -41,6 +42,7 @@ contract Transactions {
                 keyword
             )
         );
+
         emit Transfer(
             msg.sender,
             receiver,
@@ -51,11 +53,15 @@ contract Transactions {
         );
     }
 
-    function getToBlockchain() public view returns (TransferStruct[] memory) {
-        //return transactions;
+    function getAllTransactions()
+        public
+        view
+        returns (TransferStruct[] memory)
+    {
+        return transactions;
     }
 
     function getTransactionCount() public view returns (uint256) {
-        //return transactionCount;
+        return transactionCount;
     }
 }
